@@ -24,48 +24,16 @@ export default function About() {
             </p>
           </div>
 
-          {/* Right: Image collage */}
-          <div className="relative flex gap-3 h-[520px]">
-            {/* Large portrait image */}
-            <div className="flex-[1.2] relative rounded-3xl overflow-hidden">
+          {/* Right: Phone image */}
+          <div className="relative flex justify-center h-[520px]">
+            <div className="relative w-full rounded-3xl overflow-hidden">
               <Image
-                src="/rectangle-1.png"
+                src="/phone-eve.jpg"
                 alt="EVE app experience"
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div>
-
-            {/* Three smaller images stacked */}
-            <div className="flex flex-col gap-3 flex-1">
-              <div className="relative flex-1 rounded-2xl overflow-hidden">
-                <Image
-                  src="/rectangle-2.png"
-                  alt="EVE personalized guidance"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 20vw"
-                />
-              </div>
-              <div className="relative flex-1 rounded-2xl overflow-hidden">
-                <Image
-                  src="/rectangle-3.png"
-                  alt="EVE learning journey"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 20vw"
-                />
-              </div>
-              <div className="relative flex-1 rounded-2xl overflow-hidden">
-                <Image
-                  src="/rectangle-4.png"
-                  alt="EVE growth companion"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 20vw"
-                />
-              </div>
             </div>
           </div>
         </div>

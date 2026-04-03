@@ -23,15 +23,11 @@ function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
         {/* Power button */}
         <div className="absolute -right-[3px] top-[148px] w-[3px] h-[72px] rounded-r-full" style={{ background: "#3a3a3a" }} />
 
-        {/* Screen bezel */}
-        <div className="rounded-[44px] overflow-hidden bg-black" style={{ aspectRatio: "9/19.5" }}>
-          {/* Dynamic Island */}
-          <div className="relative z-10 flex justify-center pt-3 pb-1">
-            <div className="w-[88px] h-[30px] bg-black rounded-full" />
-          </div>
+        {/* Screen — video fills 100%, Dynamic Island floats on top */}
+        <div className="relative rounded-[44px] overflow-hidden bg-black" style={{ aspectRatio: "9/19.5" }}>
 
-          {/* Video / placeholder area */}
-          <div className="relative w-full" style={{ height: "calc(100% - 50px)" }}>
+          {/* Video / placeholder — full screen */}
+          <div className="absolute inset-0">
             {videoSrc ? (
               <video
                 ref={videoRef}
@@ -43,44 +39,45 @@ function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
                 onEnded={() => setIsPlaying(false)}
               />
             ) : (
-              /* Placeholder */
               <div
                 className="w-full h-full flex flex-col items-center justify-center gap-3"
                 style={{ background: "linear-gradient(160deg, #0D0920 0%, #1a1040 100%)" }}
               >
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #5693F6, #8A87EF)", opacity: 0.3 }}
-                />
                 <p className="text-white/20 text-xs font-medium">Video coming soon</p>
               </div>
             )}
-
-            {/* Play button overlay */}
-            {(!isPlaying) && videoSrc && (
-              <button
-                onClick={() => videoRef.current?.play()}
-                className="absolute inset-0 flex items-center justify-center"
-                aria-label="Play video"
-              >
-                <div className="w-16 h-16 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-all duration-200 hover:scale-105">
-                  <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </button>
-            )}
-            {/* Play button for placeholder */}
-            {!videoSrc && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: "rgba(86,147,246,0.15)", border: "1px solid rgba(86,147,246,0.3)" }}>
-                  <svg className="w-6 h-6 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: "#5693F6" }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
-                  </svg>
-                </div>
-              </div>
-            )}
           </div>
+
+          {/* Dynamic Island — floats over the video, iPhone 16 style */}
+          <div className="absolute top-3 inset-x-0 z-20 flex justify-center pointer-events-none">
+            <div className="w-[84px] h-[26px] bg-black rounded-full" />
+          </div>
+
+          {/* Play button overlay */}
+          {!isPlaying && videoSrc && (
+            <button
+              onClick={() => videoRef.current?.play()}
+              className="absolute inset-0 z-10 flex items-center justify-center"
+              aria-label="Play video"
+            >
+              <div className="w-16 h-16 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-all duration-200 hover:scale-105">
+                <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </button>
+          )}
+
+          {/* Play button for placeholder */}
+          {!videoSrc && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: "rgba(86,147,246,0.15)", border: "1px solid rgba(86,147,246,0.3)" }}>
+                <svg className="w-6 h-6 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: "#5693F6" }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                </svg>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -104,7 +101,7 @@ export default function LearningFeature() {
   return (
     <section
       id="learning-feature"
-      className="py-24 md:py-32 overflow-hidden"
+      className="relative py-24 md:py-32 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #DBE9FE 0%, #E5E6FA 45%, #FAFBFF 75%, #FFFFFF 100%)" }}
       aria-label="Learning Assistant feature"
     >
@@ -113,7 +110,7 @@ export default function LearningFeature() {
 
           {/* Left: iPhone frame */}
           <div className="flex justify-center lg:justify-start">
-            <IPhoneFrame />
+            <IPhoneFrame videoSrc="/EVE-LA.mp4" />
           </div>
 
           {/* Right: Text */}

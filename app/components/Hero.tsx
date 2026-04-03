@@ -34,7 +34,7 @@ export default function Hero() {
         {/* Social proof */}
         <div className="flex items-center gap-4 mb-12">
           <div className="h-px w-12 flex-shrink-0" style={{ background: "linear-gradient(90deg, transparent, #5693F6)" }} />
-          <p className="body-small text-gray-500 text-center">
+          <p className="body text-gray-500 text-center">
             Over{" "}
             <span className="font-semibold" style={{ color: "#5693F6" }}>220,000 members</span>
             {" "}have already used Eve to define their growth path

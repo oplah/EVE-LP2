@@ -23,7 +23,7 @@ export default function FinalCTA() {
           {/* Left: Content */}
           <div>
             {/* Headline */}
-            <h2 className="title-bold-1 text-white mb-6">
+            <h2 className="title-bold-3 text-white mb-6">
               Begin your{" "}
               <span className="text-white">transformation</span>
               {" "}today
@@ -107,27 +107,14 @@ export default function FinalCTA() {
             </div>
           </div>
 
-          {/* Right: Placeholder image */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div
-              className="w-full rounded-3xl flex items-center justify-center"
-              style={{
-                aspectRatio: "4/5",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px dashed rgba(255,255,255,0.12)",
-              }}
-            >
-              <div className="text-center">
-                <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3"
-                  style={{ background: "rgba(255,255,255,0.06)" }}
-                >
-                  <svg className="w-7 h-7 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                  </svg>
-                </div>
-                <p className="text-white/20 text-sm font-medium">Image placeholder</p>
-              </div>
+          {/* Right: Image */}
+          <div className="hidden lg:block">
+            <div className="relative w-full rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
+              <img
+                src="/endsection-eve.png"
+                alt="Begin your transformation with EVE"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
