@@ -25,16 +25,14 @@ export default function About() {
           </div>
 
           {/* Right: Phone image */}
-          <div className="relative flex justify-center h-[520px]">
-            <div className="relative w-full rounded-3xl overflow-hidden">
-              <Image
-                src="/phone-eve.jpg"
-                alt="EVE app experience"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
+          <div className="relative w-full rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
+            <Image
+              src="/phone-eve.jpg"
+              alt="EVE app experience"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
       </div>

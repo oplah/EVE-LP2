@@ -7,7 +7,7 @@ function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <div className="relative mx-auto" style={{ width: 300 }}>
+    <div className="relative" style={{ width: 315, marginLeft: "5px" }}>
       {/* iPhone body */}
       <div
         className="relative rounded-[52px] p-[10px] shadow-2xl"
@@ -33,6 +33,9 @@ function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
                 ref={videoRef}
                 src={videoSrc}
                 className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
                 playsInline
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
@@ -53,31 +56,6 @@ function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
             <div className="w-[84px] h-[26px] bg-black rounded-full" />
           </div>
 
-          {/* Play button overlay */}
-          {!isPlaying && videoSrc && (
-            <button
-              onClick={() => videoRef.current?.play()}
-              className="absolute inset-0 z-10 flex items-center justify-center"
-              aria-label="Play video"
-            >
-              <div className="w-16 h-16 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-all duration-200 hover:scale-105">
-                <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-            </button>
-          )}
-
-          {/* Play button for placeholder */}
-          {!videoSrc && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ background: "rgba(86,147,246,0.15)", border: "1px solid rgba(86,147,246,0.3)" }}>
-                <svg className="w-6 h-6 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: "#5693F6" }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
-                </svg>
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
@@ -110,7 +88,7 @@ export default function LearningFeature() {
 
           {/* Left: iPhone frame */}
           <div className="flex justify-center lg:justify-start">
-            <IPhoneFrame videoSrc="/EVE-LA.mp4" />
+            <IPhoneFrame videoSrc="/Video-LA.MP4" />
           </div>
 
           {/* Right: Text */}
