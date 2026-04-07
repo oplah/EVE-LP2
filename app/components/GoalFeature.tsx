@@ -7,7 +7,7 @@ function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
-    <div className="relative" style={{ width: 315, marginLeft: "5px" }}>
+    <div className="relative mx-auto" style={{ width: 300 }}>
       {/* iPhone body */}
       <div
         className="relative rounded-[52px] p-[10px] shadow-2xl"
@@ -118,7 +118,7 @@ export default function GoalFeature() {
           </div>
 
           {/* Right: iPhone frame */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center">
             <IPhoneFrame videoSrc="/Video-GoalAssitant.MP4" />
           </div>
 
