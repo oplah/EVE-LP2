@@ -140,34 +140,6 @@ export default function FAQ() {
           })}
         </div>
 
-        {/* Still have questions */}
-        <div className="mt-12 text-center p-8 rounded-3xl bg-white border border-gray-200">
-          <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #5693F6, #8A87EF)" }}>
-            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-            </svg>
-          </div>
-          <h3 className="title-bold-5 text-[#1A1A1A] mb-2">Still have questions?</h3>
-          <p className="body-small text-gray-500 mb-5">
-            EVE is live and ready to answer anything — or reach our support team.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="#get-started"
-              className="btn-primary px-6 py-2.5 rounded-full text-sm font-semibold"
-            >
-              Ask EVE directly
-            </a>
-            <a
-              href="https://support.mindvalley.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2.5 rounded-full border border-gray-200 text-sm font-semibold text-gray-600 hover:border-gray-300 hover:text-[#1A1A1A] transition-colors"
-            >
-              Visit support center
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -60,7 +60,7 @@ export default function Navigation() {
             href="#get-started"
             className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold"
           >
-            Try EVE Free
+            Try EVE AI
           </a>
         </div>
 
@@ -101,7 +101,7 @@ export default function Navigation() {
             onClick={() => setMobileOpen(false)}
             className="btn-primary block w-full text-center px-5 py-3 rounded-full text-sm font-semibold mt-2"
           >
-            Try EVE Free
+            Try EVE AI
           </a>
         </div>
       )}
