@@ -9,10 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <Image src="/EVE-icon.svg" alt="EVE" width={28} height={28} />
-              <span className="font-bold text-[#1A1A1A]">EVE</span>
-              <span className="text-xs text-gray-400">by Mindvalley</span>
+            <div className="flex flex-col gap-1 mb-4">
+              <Image src="/eve-logo.svg" alt="EVE by Mindvalley" width={76} height={32} />
+              <span className="text-xs text-gray-400 pl-0.5">by Mindvalley</span>
             </div>
             <p className="text-sm text-gray-500 leading-relaxed max-w-[200px]">
               Your AI companion for personal transformation.

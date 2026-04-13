@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import CTAButton from "./CTAButton";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,12 +57,9 @@ export default function Navigation() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#get-started"
-            className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold"
-          >
+          <CTAButton className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold">
             Try EVE AI
-          </a>
+          </CTAButton>
         </div>
 
         {/* Mobile menu button */}
@@ -96,13 +94,9 @@ export default function Navigation() {
               {label}
             </a>
           ))}
-          <a
-            href="#get-started"
-            onClick={() => setMobileOpen(false)}
-            className="btn-primary block w-full text-center px-5 py-3 rounded-full text-sm font-semibold mt-2"
-          >
+          <CTAButton className="btn-primary block w-full text-center px-5 py-3 rounded-full text-sm font-semibold mt-2">
             Try EVE AI
-          </a>
+          </CTAButton>
         </div>
       )}
     </nav>

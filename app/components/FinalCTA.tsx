@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 export default function FinalCTA() {
   return (
     <section
@@ -29,21 +31,18 @@ export default function FinalCTA() {
               {" "}today
             </h2>
 
-            <p className="body-large text-white/55 max-w-xl mb-12">
+            <p className="body-large text-white/55 max-w-xl mb-6">
               Join over a million learners who use EVE to unlock their potential,
               deepen their learning, and grow every single day.
             </p>
 
             {/* CTA */}
-            <a
-              href="#get-started"
-              className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base active:scale-95 mb-10"
-            >
+            <CTAButton className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base active:scale-95 mb-5">
               Try EVE AI
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
-            </a>
+            </CTAButton>
 
             {/* Trust signals */}
             <div className="flex flex-wrap items-center gap-6 text-white/30 text-xs">
