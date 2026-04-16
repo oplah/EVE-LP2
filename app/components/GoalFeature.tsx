@@ -3,8 +3,17 @@
 import { useState, useRef } from "react";
 
 function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+    } else {
+      videoRef.current.pause();
+    }
+  };
 
   return (
     <div className="relative mx-auto" style={{ width: 300 }}>
@@ -24,7 +33,11 @@ function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
         <div className="absolute -right-[3px] top-[148px] w-[3px] h-[72px] rounded-r-full" style={{ background: "#3a3a3a" }} />
 
         {/* Screen — video fills 100%, Dynamic Island floats on top */}
-        <div className="relative rounded-[44px] overflow-hidden bg-black" style={{ aspectRatio: "9/19.5" }}>
+        <div
+          className="relative rounded-[44px] overflow-hidden bg-black cursor-pointer"
+          style={{ aspectRatio: "9/19.5", transform: "translateZ(0)" }}
+          onClick={togglePlay}
+        >
 
           {/* Video / placeholder — full screen */}
           <div className="absolute inset-0">
@@ -55,6 +68,17 @@ function IPhoneFrame({ videoSrc }: { videoSrc?: string }) {
           <div className="absolute top-3 inset-x-0 z-20 flex justify-center pointer-events-none">
             <div className="w-[84px] h-[26px] bg-black rounded-full" />
           </div>
+
+          {/* Pause / Play overlay */}
+          {!isPlaying && (
+            <div className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none">
+              <div className="w-14 h-14 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
+                <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347c-.75.412-1.667-.13-1.667-.985V5.653z" />
+                </svg>
+              </div>
+            </div>
+          )}
 
         </div>
       </div>

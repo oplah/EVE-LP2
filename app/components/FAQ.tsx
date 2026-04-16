@@ -38,11 +38,6 @@ const FAQ_ITEMS: FAQItem[] = [
     answer:
       "Yes! EVE supports voice input so you can have natural, hands-free conversations. Just like talking to a knowledgeable friend — speak your thoughts, questions, or goals, and EVE will respond. It's especially useful when you're on the go.",
   },
-  {
-    question: "What languages does EVE support?",
-    answer:
-      "EVE currently delivers the best experience in English. We're actively expanding language support to serve our global community, with more languages coming soon. Stay tuned for announcements in the Mindvalley app.",
-  },
 ];
 
 export default function FAQ() {
