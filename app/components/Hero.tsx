@@ -65,6 +65,7 @@ export default function Hero() {
             ref={videoRef}
             className="w-full h-full object-cover"
             src="/eve.mp4"
+            poster="/eve-thumbnail.jpg"
             muted={isMuted}
             playsInline
             onPlay={() => setIsPlaying(true)}
