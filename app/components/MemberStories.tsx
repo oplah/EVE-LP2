@@ -93,8 +93,11 @@ export default function MemberStories() {
 
         </div>
 
-        {/* Testimonial cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
+      </div>
+
+      {/* Testimonial cards — full section width matching SmallFeatures */}
+      <div className="max-w-7xl mx-auto w-full mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             "Would have given up without EVE!!!",
             "The quizzes add even more depth of understanding... The testing enhances the knowledge and its subtleties.",
@@ -139,8 +142,8 @@ export default function MemberStories() {
             </div>
           ))}
         </div>
-
       </div>
+
     </section>
   );
 }
