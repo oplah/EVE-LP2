@@ -92,6 +92,54 @@ export default function MemberStories() {
           </div>
 
         </div>
+
+        {/* Testimonial cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-16">
+          {[
+            "Would have given up without EVE!!!",
+            "The quizzes add even more depth of understanding... The testing enhances the knowledge and its subtleties.",
+            "There's a level of sincerity in all of Eve's responses that's given me a deeper appreciation of how much help she is giving me.",
+            "Inspires hope and strengthens the will and expectancy",
+          ].map((quote, i) => (
+            <div
+              key={i}
+              className="rounded-2xl p-6 flex flex-col gap-4 bg-white/70 backdrop-blur-sm"
+              style={{ border: "1px solid rgba(86,147,246,0.15)" }}
+            >
+              {/* Stars */}
+              <div className="flex items-center gap-0.5">
+                {[...Array(5)].map((_, s) => (
+                  <svg key={s} className="w-4 h-4" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id={`reviewStar-${i}-${s}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#5693F6" />
+                        <stop offset="100%" stopColor="#8A87EF" />
+                      </linearGradient>
+                    </defs>
+                    <path fill={`url(#reviewStar-${i}-${s})`} d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                ))}
+              </div>
+
+              {/* Quote */}
+              <p className="body-small text-gray-600 leading-relaxed flex-1">&ldquo;{quote}&rdquo;</p>
+
+              {/* Verified badge */}
+              <div className="flex items-center gap-1.5">
+                <div
+                  className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{ background: "linear-gradient(135deg, #5693F6, #8A87EF)" }}
+                >
+                  <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
+                <span className="text-xs text-gray-400 font-medium">Verified member</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
